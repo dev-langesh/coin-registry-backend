@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
 const { configEnv } = require("./envConf");
 
-// configEnv("../../.env");
+configEnv("../../.env");
 
 const URI = process.env.MONGO_URI;
 
 function connectDb() {
-
-  console.log(URI)
+  console.log(URI);
   mongoose.connect(URI, (err) => {
     if (err) throw new Error("db connection failed");
     else console.log("connected to db");
